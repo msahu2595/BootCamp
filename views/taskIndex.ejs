@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <button type="button"><a href="../tasks/add"> ADD </a></button>
+        <% for(var i=0; i<taskviews.length; ++i){%>
+            <div  style="padding:10px; text-align: center;">
+            <table border="1" cellpadding="10px">
+                <tr>
+                    <td> <h1><%= taskviews[i].title %></h1> </td>
+                </tr>
+                <tr>
+                    <td> <%= taskviews[i].description %> </td>
+                </tr>
+                <tr>
+                    <td> <%= taskviews[i].endDate %> </td>
+                </tr>
+                <tr>
+                    <td> <%= taskviews[i]._id %> </td>
+                </tr>
+                <tr>
+                    <td> <%= taskviews[i].status %> </td>
+                </tr>
+                <tr>
+                    <td> <%= taskviews[i].updated %> </td>
+                </tr>
+                <tr>
+                    <td> <button type="button"> <a href="../tasks/edit/<%= taskviews[i]._id %>"> EDIT </a> </button> </td>
+                </tr>
+                <tr>
+                    <td> <button type="button"> <a href="../tasks/approve/<%= taskviews[i]._id %>"> APPROVE </a> </button> </td>
+                </tr>
+            </table>
+            </div>
+            <% } %>
+    </body>
+</html>
